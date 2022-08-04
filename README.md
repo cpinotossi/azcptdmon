@@ -515,9 +515,12 @@ git submodule update --init
 git status
 git add *
 git add .gitignore
-git commit -m"init"
+git diff --cached --submodule
+git commit -m"Need to re-run this once more before the final version"
 git push origin main 
+git push --recurse-submodules=on-demand
 git rm README.md # unstage
 git --help
+git config advice.addIgnoredFile false
 ~~~
 
